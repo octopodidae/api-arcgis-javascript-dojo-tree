@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
+	<title>ArcGIS JS API</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://js.arcgis.com/4.5/esri/themes/light/main.css">
+	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/dojo/1.6/dijit/themes/claro/claro.css" />
+  <link rel="stylesheet" href="./style.css" />
+  <script src="https://js.arcgis.com/4.5"></script>
+</head>
+
+<body class="claro">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col col-md-3">
+        <br><br>
+				<button id="collapse" class="btn btn-primary">Collapse all</button>
+				<button id="expand" class="btn btn-primary">Expand all</button>
+        <br>
+        <br>
+      </div> <!-- tree -->
+      <div class="col col-md-9"> <!-- map -->
+        <div class="row">
+          <nav class="nav" id="menu">
+            <a class="nav-link active" href="#">Link1</a>
+            <a class="nav-link" href="#">Link2</a>
+            <a class="nav-link" href="#">Link3</a>
+            <a class="nav-link disabled" href="#">Link4</a>
+          </nav>
+        </div>
+        <div id="mapview">
+          <input type="button" class="btn btn-info" id="intialExtent" value="Go to initial extent">
+        </div> <!-- the map -->
+        <br>
+        <p id="basemapChbox"><input type="checkbox" class="form-check-input" id="basemapCheckbox"><label for="basemapCheckbox">&nbsp&nbspChange basemap</label></p>
+        <div id="basemapsDiv">
+          <div id="myList">
+            <form>
+              <div class="form-group">
+                <select class="form-control list" id="basemapList">
+                  <option value="osm">OSM</option>
+                  <option value="topo">Topo</option>
+                  <option value="streets">Streets</option>
+                  <option value="satellite">Satellite</option>
+                  <option value="hybrid">Hybrid</option>
+                  <option value="gray">Gray</option>
+                  <option value="dark-gray" selected="selected">Dark gray</option>
+                  <option value="streets-night-vector">Streets night vector</option>
+                </select>
+              </div>
+            </form>
+          </div>
+          <div id="btnsDiv">
+            <button class="btn btn-primary basemapBtn" id="osm">OSM</button>
+            <button class="btn btn-primary basemapBtn" id="topo">Topo</button>
+            <button class="btn btn-primary basemapBtn" id="streets">Street</button>
+            <button class="btn btn-primary basemapBtn" id="satellite">Satellite</button>
+            <button class="btn btn-primary basemapBtn" id="hybrid">Hybrid</button>
+            <button class="btn btn-primary basemapBtn" id="gray">Gray</button>
+            <button class="btn btn-primary basemapBtn" id="dark-gray">Dark Gray</button>
+            <button class="btn btn-primary basemapBtn" id="streets-night-vector">Streets night vector</button>
+          </div>
+        </div>	<!-- END #basemaps -->
+        <br>
+        <span id="errorSpan" class="alert alert-danger" role="alert"></span>
+        <div id="toc"></div>
+        <br><br>
+      </div>
+    </div>
+  </div> <!-- END CONTAINER -->
+  <script src="./myscript.js"></script>
+  </body>
+</html>
